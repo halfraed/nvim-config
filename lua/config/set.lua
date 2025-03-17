@@ -22,5 +22,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.autoindent = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 vim.cmd.colorscheme("tokyonight-night")
 
