@@ -60,6 +60,7 @@ require('mason-lspconfig').setup({
             require('lspconfig').tailwindcss.setup({})
             require('lspconfig').lua_ls.setup({})
             require('lspconfig').jsonls.setup({})
+            require('lspconfig').gopls.setup({})
         end,
     },
 })
