@@ -1,18 +1,7 @@
 return {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-    },
-    keys = {
-        {
-            "<leader>?",
-            function()
-                require("which-key").show({ global = false })
-            end,
-            desc = "Buffer Local Keymaps (which-key)",
-        },
-    },
+  "folke/which-key.nvim",
+  event = "VeryLazy", -- This ensures it loads in the background without slowing down your startup
+  opts = {
+    preset = "modern", -- This gives the popup a very clean, floating aesthetic that matches Rosé Pine
+  },
 }
