@@ -32,6 +32,9 @@ local kind_icons = {
 cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
+        {
+            name = "codecompanion", group_index = 1, priority = 100,
+        }
     },
     mapping = cmp.mapping.preset.insert({
         -- Navigate between completion items
