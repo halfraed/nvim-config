@@ -42,3 +42,17 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
 -- Wrap these in function() ... end to lazy-load them on keypress
 vim.keymap.set('n', 'gI', function() require('telescope.builtin').lsp_implementations() end, { desc = 'Go to Implementation' })
 vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, { desc = 'Find References' })
+
+-- Jump forward through snippet placeholders (e.g., inside function arguments)
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  if vim.snippet.active({ direction = 1 }) then
+    vim.snippet.jump(1)
+  end
+end, { desc = "Jump to next snippet placeholder" })
+
+-- Jump backward through snippet placeholders
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+  if vim.snippet.active({ direction = -1 }) then
+    vim.snippet.jump(-1)
+  end
+end, { desc = "Jump to previous snippet placeholder" })
