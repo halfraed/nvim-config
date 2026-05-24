@@ -1,0 +1,20 @@
+# Neovim local state
+.undo/
+.backup/
+.swap/
+session/
+
+# Lazy / plugin data (cache/install dirs)
+lazy/
+plugin/
+pack/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Lua bytecode (rare but safe)
+*.luac

@@ -17,3 +17,9 @@ opt.autocomplete = true -- Enables native insert-mode completion
 
 -- Sync clipboard between OS and Neovim
 vim.opt.clipboard = "unnamedplus"
+
+-- spell checking
+opt.spell = true
+opt.spelllang = "en_us"
+opt.spelloptions = "camel"
+

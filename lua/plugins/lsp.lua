@@ -55,12 +55,29 @@ return {
     vim.lsp.enable('gopls')
 
     -- Angular
-    vim.lsp.config('angularls', {
-      cmd = { 'ngserver', '--stdio', '--tsProbeLocations', '', '--ngProbeLocations', '' },
-      filetypes = { 'html', 'typescript', 'typescriptreact' },
-      root_markers = { 'angular.json', 'project.json', '.git' },
-    })
-    vim.lsp.enable('angularls')
+    vim.lsp.config("angularls", {
+      cmd = {
+      "ngserver",
+    "--stdio",
+    "--tsProbeLocations",
+    vim.fn.getcwd() .. "/node_modules",
+    "--ngProbeLocations",
+    vim.fn.getcwd() .. "/node_modules",
+  },
+  filetypes = {
+    "typescript",
+    "html",
+    "typescriptreact",
+  },
+  root_markers = {
+    "angular.json",
+    "project.json",
+    "package.json",
+    ".git",
+  },
+})
+
+vim.lsp.enable("angularls")
 
     -- SQL
     vim.lsp.config('sqlls', {
@@ -103,5 +120,37 @@ return {
         vim.lsp.buf.format({ async = false })
       end,
     })
+
+
+
+-- CSpell LSP - code-aware spell checker
+vim.lsp.config("cspell_ls", {
+  cmd = { "cspell-lsp", "--stdio" },
+  filetypes = {
+    "go",
+    "gomod",
+    "gowork",
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "html",
+    "css",
+    "scss",
+    "json",
+    "jsonc",
+    "yaml",
+    "markdown",
+    "lua",
+    "sql",
+  },
+  root_markers = {
+    "go.mod",
+    "package.json",
+    ".git",
+  },
+})
+
+vim.lsp.enable("cspell_ls")
   end
 }
