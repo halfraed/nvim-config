@@ -19,7 +19,9 @@ vim.g.mapleader = " "
 
 -- Load core configurations
 require("config.options")
-require("config.keymaps") -- You can add your custom keymaps here later
+require("config.keymaps") 
+require("config.lsp")
 
 -- Initialize lazy.nvim (loads everything inside lua/plugins/)
 require("lazy").setup("plugins")
+

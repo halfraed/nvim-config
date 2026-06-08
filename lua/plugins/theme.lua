@@ -1,20 +1,16 @@
 return {
   "rose-pine/neovim",
   name = "rose-pine",
-  lazy = false,    -- We want the theme to load immediately on startup
-  priority = 1000, -- Highest priority to load before everything else
+  priority = 1000,
+  lazy = false,
+
   config = function()
+    vim.opt.termguicolors = true
+
     require("rose-pine").setup({
-      variant = "main", -- Options: 'auto', 'main', 'moon', or 'dawn'
-      dark_variant = "main",
-      
-      styles = {
-        bold = true,
-        italic = true,
-        transparency = false, -- Set to true if your terminal has a transparent background
-      },
+      variant = "moon",
     })
-    
-    vim.cmd("colorscheme rose-pine")
-  end
+
+    vim.cmd.colorscheme("rose-pine-moon")
+  end,
 }

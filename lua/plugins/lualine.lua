@@ -1,13 +1,13 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  "rose-pine/neovim",
+  name = "rose-pine",
+  priority = 1000,
+  lazy = false,
   config = function()
-    require("lualine").setup({
-      options = {
-        theme = "rose-pine",
-        component_separators = "|",
-        section_separators = "",
-      },
+    require("rose-pine").setup({
+      variant = "main", -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
     })
-  end
+    vim.cmd.colorscheme("rose-pine")
+  end,
 }

@@ -56,3 +56,16 @@ vim.keymap.set({ "i", "s" }, "<C-j>", function()
     vim.snippet.jump(-1)
   end
 end, { desc = "Jump to previous snippet placeholder" })
+
+
+-- LSP Navigation Keymaps
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename Symbol' })
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+vim.keymap.set('n', 'gI', function() require('telescope.builtin').lsp_implementations() end, { desc = 'Go to Implementation' })
+vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, { desc = 'Find References' })
+
+
+
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", {
+  desc = "Clear search highlight",
+})
