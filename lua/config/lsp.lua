@@ -3,7 +3,7 @@
 
 -- 1. Native Autocomplete Opt-in and UI Settings
 vim.opt.autocomplete = true -- Enables 0.12 native insert-mode completion
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "fuzzy" }
 
 -- 2. Map Tab and Enter to control the native popup menu naturally
 vim.keymap.set('i', '<Tab>', function()
